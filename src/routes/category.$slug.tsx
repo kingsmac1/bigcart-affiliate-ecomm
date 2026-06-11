@@ -3,6 +3,7 @@ import { getCategory, categories } from "@/data/categories";
 import { productsByCategory } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 import { SectionLabel } from "@/components/site/SectionLabel";
+import { Newsletter } from "@/components/site/Newsletter";
 
 export const Route = createFileRoute("/category/$slug")({
   loader: ({ params }) => {
@@ -78,6 +79,7 @@ function CategoryPage() {
   const items = productsByCategory(category.slug);
 
   return (
+    <>
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <Link
         to="/categories"
@@ -143,5 +145,7 @@ function CategoryPage() {
         </div>
       </div>
     </div>
+    <Newsletter />
+    </>
   );
 }

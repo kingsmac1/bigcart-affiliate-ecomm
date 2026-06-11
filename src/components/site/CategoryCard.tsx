@@ -17,7 +17,7 @@ export function CategoryCard({
         "group relative flex flex-col overflow-hidden rounded-3xl transition-all hover:-translate-y-0.5 hover:bg-brand " +
         (accent
           ? "bg-brand text-brand-foreground"
-          : "bg-card border border-border/70")
+          : "bg-card")
       }
     >
       <div className="aspect-[4/3] overflow-hidden bg-surface-2">
