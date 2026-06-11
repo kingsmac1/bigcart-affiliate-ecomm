@@ -3,6 +3,7 @@ import { getCategory, categories } from "@/data/categories";
 import { productsByCategory } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 import { SectionLabel } from "@/components/site/SectionLabel";
+import { Newsletter } from "@/components/site/Newsletter";
 
 export const Route = createFileRoute("/category/$slug")({
   loader: ({ params }) => {
@@ -143,5 +144,7 @@ function CategoryPage() {
         </div>
       </div>
     </div>
+    <Newsletter />
+    </>
   );
 }

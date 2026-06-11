@@ -6,7 +6,7 @@ export function BlogCard({ blog }: { blog: Blog }) {
     <Link
       to="/blog/$slug"
       params={{ slug: blog.slug }}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-card transition-all hover:-translate-y-0.5 hover:shadow-lg"
+      className="group flex flex-col overflow-hidden rounded-2xl bg-card transition-all hover:-translate-y-0.5 hover:shadow-lg"
     >
       <div className="aspect-[4/3] overflow-hidden bg-surface-2">
         <img
@@ -22,7 +22,7 @@ export function BlogCard({ blog }: { blog: Blog }) {
         <span className="text-[10px] font-semibold uppercase tracking-widest text-brand">
           {blog.category}
         </span>
-        <h3 className="font-display text-xl leading-tight text-foreground">
+        <h3 className="font-display text-base font-normal leading-snug text-foreground">
           {blog.title}
         </h3>
         <p className="line-clamp-2 text-sm text-muted-foreground">

@@ -5,6 +5,7 @@ import { products } from "@/data/products";
 import { blogs } from "@/data/blogs";
 import { testimonials } from "@/data/testimonials";
 import { ProductCard } from "@/components/site/ProductCard";
+import { CategoryCard } from "@/components/site/CategoryCard";
 import { BlogCard } from "@/components/site/BlogCard";
 import { Newsletter } from "@/components/site/Newsletter";
 import { SectionLabel } from "@/components/site/SectionLabel";
@@ -40,6 +41,7 @@ function Home() {
     <>
       <Hero />
       <PopularProducts />
+      <CategoriesSection />
       <Testimonials />
       <BlogsSection />
       <Newsletter />
@@ -52,7 +54,7 @@ function Hero() {
     <section className="mx-auto max-w-7xl px-4 pb-12 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <SectionLabel>Welcome to BigCart</SectionLabel>
-        <h1 className="font-display text-5xl leading-[1.05] sm:text-6xl md:text-7xl">
+        <h1 className="font-display text-[62px] font-normal leading-[1.05]">
           Discover <span className="text-brand">The Most</span>
           <br />
           Sought-after <span className="text-brand">Products.</span>
@@ -80,17 +82,7 @@ function PopularProducts() {
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl text-center">
-        <SectionLabel>Popular Picks</SectionLabel>
-        <h2 className="font-display text-4xl leading-tight sm:text-5xl">
-          Check Out The <span className="text-brand">Most Popular</span> Pieces.
-        </h2>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-          The products our community keeps coming back to. Refreshed weekly.
-        </p>
-      </div>
-
-      <div className="mt-8 flex flex-wrap justify-center gap-2">
+      <div className="flex flex-wrap justify-center gap-2">
         {filters.map((f) => (
           <button
             key={f.slug}
@@ -120,6 +112,27 @@ function PopularProducts() {
         >
           See all products
         </Link>
+      </div>
+    </section>
+  );
+}
+
+function CategoriesSection() {
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl text-center">
+        <SectionLabel>Shop by Category</SectionLabel>
+        <h2 className="font-display text-4xl leading-tight sm:text-5xl">
+          Pick your <span className="text-brand">corner</span> of the shop.
+        </h2>
+        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
+          From everyday essentials to the things you didn't know you needed.
+        </p>
+      </div>
+      <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {categories.map((c) => (
+          <CategoryCard key={c.slug} category={c} />
+        ))}
       </div>
     </section>
   );
