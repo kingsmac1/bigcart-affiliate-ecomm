@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Star } from "lucide-react";
+import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { blogs } from "@/data/blogs";
 import { testimonials } from "@/data/testimonials";
