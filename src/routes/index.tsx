@@ -51,7 +51,7 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="mx-auto max-w-7xl px-4 pb-12 pt-16 sm:px-6 sm:pt-20 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 pb-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <SectionLabel>Welcome to BigCart</SectionLabel>
         <h1 className="font-display text-[62px] font-normal leading-[1.05]">
@@ -81,7 +81,7 @@ function PopularProducts() {
       : products.filter((p) => p.category === active).slice(0, 12);
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 pt-16 pb-24 sm:px-6 lg:px-8">
       <div className="flex flex-wrap justify-center gap-2">
         {filters.map((f) => (
           <button
