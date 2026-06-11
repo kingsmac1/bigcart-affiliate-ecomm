@@ -41,7 +41,6 @@ function Home() {
     <>
       <Hero />
       <PopularProducts />
-      <CategoriesSection />
       <Testimonials />
       <BlogsSection />
       <Newsletter />
@@ -50,7 +49,6 @@ function Home() {
 }
 
 function Hero() {
-  const heroCats = categories.slice(0, 4);
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
@@ -65,16 +63,6 @@ function Hero() {
           home, fashion and furniture — quietly chosen for the things that
           actually matter.
         </p>
-      </div>
-
-      <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
-        {heroCats.map((cat, i) => (
-          <CategoryCard
-            key={cat.slug}
-            category={cat}
-            variant={i === heroCats.length - 1 ? "accent" : "default"}
-          />
-        ))}
       </div>
     </section>
   );
@@ -133,26 +121,6 @@ function PopularProducts() {
         >
           See all products
         </Link>
-      </div>
-    </section>
-  );
-}
-
-function CategoriesSection() {
-  return (
-    <section className="bg-surface-2/60 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel>Shop by Category</SectionLabel>
-          <h2 className="font-display text-4xl leading-tight sm:text-5xl">
-            Pick your <span className="text-brand">corner</span> of the shop.
-          </h2>
-        </div>
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((c) => (
-            <CategoryCard key={c.slug} category={c} />
-          ))}
-        </div>
       </div>
     </section>
   );
