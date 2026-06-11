@@ -54,7 +54,7 @@ function Hero() {
     <section className="mx-auto max-w-7xl px-4 pb-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <SectionLabel>Welcome to BigCart</SectionLabel>
-        <h1 className="font-display text-[62px] font-normal leading-[1.05]">
+        <h1 className="font-display text-3xl sm:text-5xl lg:text-[62px] font-normal leading-[1.05]">
           Discover <span className="text-brand">The Most</span>
           <br />
           Sought-after <span className="text-brand">Products.</span>
@@ -122,7 +122,7 @@ function CategoriesSection() {
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <SectionLabel>Shop by Category</SectionLabel>
-        <h2 className="font-display text-4xl leading-tight sm:text-5xl">
+        <h2 className="font-display text-3xl leading-tight sm:text-5xl">
           Pick your <span className="text-brand">corner</span> of the shop.
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
@@ -143,7 +143,7 @@ function Testimonials() {
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <SectionLabel>Testimonials</SectionLabel>
-        <h2 className="font-display text-4xl leading-tight sm:text-5xl">
+        <h2 className="font-display text-3xl leading-tight sm:text-5xl">
           See what our <span className="text-brand">customers</span> think
           <br className="hidden sm:block" />
           about <span className="text-brand">us</span> and our products.
@@ -190,7 +190,7 @@ function BlogsSection() {
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
           <div>
             <SectionLabel>Journal</SectionLabel>
-            <h2 className="font-display text-4xl leading-tight sm:text-5xl">
+            <h2 className="font-display text-3xl leading-tight sm:text-5xl">
               Check out our <span className="text-brand">blogs</span>.
             </h2>
             <p className="mt-3 max-w-xl text-sm text-muted-foreground">

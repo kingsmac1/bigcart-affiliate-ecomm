@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoWhiteAsset from "@/assets/brand/bigcart-logo-white.png.asset.json";
+import logoWhite from "@/assets/brand/BigCart Logo - white.png";
 import { Instagram, Mail } from "lucide-react";
 import { categories } from "@/data/categories";
 
@@ -11,7 +11,7 @@ export function SiteFooter() {
           <div className="min-w-0">
             <Link to="/" className="inline-flex items-center">
               <img
-                src={logoWhiteAsset.url}
+                src={logoWhite}
                 alt="BigCart"
                 className="h-10 w-auto"
               />
