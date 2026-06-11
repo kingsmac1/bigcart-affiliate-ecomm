@@ -5,7 +5,7 @@ import { categories } from "@/data/categories";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 bg-[#1a1116] text-white/80">
+    <footer className="bg-[#1a1116] text-white/80">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="min-w-0">

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { blogs } from "@/data/blogs";
 import { BlogCard } from "@/components/site/BlogCard";
+import { Newsletter } from "@/components/site/Newsletter";
 import { SectionLabel } from "@/components/site/SectionLabel";
 
 export const Route = createFileRoute("/blog/")({
@@ -43,6 +44,7 @@ function BlogIndex() {
           <BlogCard key={b.slug} blog={b} />
         ))}
       </div>
+      <Newsletter />
     </div>
   );
 }

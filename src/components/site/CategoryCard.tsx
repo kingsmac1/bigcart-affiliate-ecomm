@@ -33,7 +33,7 @@ export function CategoryCard({
       <div className="flex flex-col gap-1 p-5 transition-colors">
         <h3
           className={
-            "font-display text-2xl leading-tight transition-colors group-hover:text-brand-foreground " +
+            "font-display text-[22px] leading-tight transition-colors group-hover:text-brand-foreground " +
             (accent ? "text-brand-foreground" : "text-foreground")
           }
         >

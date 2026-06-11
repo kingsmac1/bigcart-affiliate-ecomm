@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { categories } from "@/data/categories";
 import { CategoryCard } from "@/components/site/CategoryCard";
+import { Newsletter } from "@/components/site/Newsletter";
 import { SectionLabel } from "@/components/site/SectionLabel";
 
 export const Route = createFileRoute("/categories")({
@@ -43,6 +44,7 @@ function CategoriesPage() {
           <CategoryCard key={c.slug} category={c} />
         ))}
       </div>
+      <Newsletter />
     </div>
   );
 }
