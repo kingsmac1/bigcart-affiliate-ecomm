@@ -1,11 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Star } from "lucide-react";
-import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { blogs } from "@/data/blogs";
 import { testimonials } from "@/data/testimonials";
 import { ProductCard } from "@/components/site/ProductCard";
-import { CategoryCard } from "@/components/site/CategoryCard";
 import { BlogCard } from "@/components/site/BlogCard";
 import { Newsletter } from "@/components/site/Newsletter";
 import { SectionLabel } from "@/components/site/SectionLabel";
