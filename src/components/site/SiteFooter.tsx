@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoWhiteAsset from "@/assets/brand/logo-white.png.asset.json";
+import logoWhiteAsset from "@/assets/brand/bigcart-logo-white.png.asset.json";
 import { Instagram, Mail } from "lucide-react";
 import { categories } from "@/data/categories";
 
@@ -10,11 +10,11 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="min-w-0">
             <Link to="/" className="inline-flex items-center">
-              {/* white logo is barely visible alone — use brand wordmark style fallback */}
-              <span className="font-display text-3xl tracking-tight text-white">
-                BigCart
-              </span>
-              <img src={logoWhiteAsset.url} alt="" className="sr-only" />
+              <img
+                src={logoWhiteAsset.url}
+                alt="BigCart"
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">
               BigCart brings you the most sought-after and genuinely useful
