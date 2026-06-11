@@ -14,7 +14,7 @@ export function CategoryCard({
       to="/category/$slug"
       params={{ slug: category.slug }}
       className={
-        "group relative flex flex-col overflow-hidden rounded-3xl transition-all hover:-translate-y-0.5 " +
+        "group relative flex flex-col overflow-hidden rounded-3xl transition-all hover:-translate-y-0.5 hover:bg-brand " +
         (accent
           ? "bg-brand text-brand-foreground"
           : "bg-card border border-border/70")
@@ -30,10 +30,10 @@ export function CategoryCard({
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-col gap-1 p-5">
+      <div className="flex flex-col gap-1 p-5 transition-colors">
         <h3
           className={
-            "font-display text-2xl leading-tight " +
+            "font-display text-2xl leading-tight transition-colors group-hover:text-brand-foreground " +
             (accent ? "text-brand-foreground" : "text-foreground")
           }
         >
@@ -41,7 +41,7 @@ export function CategoryCard({
         </h3>
         <p
           className={
-            "text-sm " +
+            "text-sm transition-colors group-hover:text-brand-foreground/80 " +
             (accent ? "text-brand-foreground/80" : "text-muted-foreground")
           }
         >
