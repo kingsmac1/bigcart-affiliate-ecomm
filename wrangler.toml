@@ -1,9 +1,0 @@
-# wrangler.toml
-name = "bigcart"
-compatibility_date = "2025-09-02"
-compatibility_flags = ["nodejs_compat"]
-main = ".output/server/index.mjs"
-assets = { directory = ".output/public" }
-
-[vars]
-NODE_ENV = "production"
