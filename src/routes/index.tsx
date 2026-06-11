@@ -54,7 +54,7 @@ function Hero() {
     <section className="mx-auto max-w-7xl px-4 pb-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <SectionLabel>Welcome to BigCart</SectionLabel>
-        <h1 className="font-display text-3xl sm:text-5xl lg:text-[62px] font-normal leading-[1.05]">
+        <h1 className="font-display text-5xl sm:text-5xl lg:text-[62px] font-normal leading-[1.05]">
           Discover <span className="text-brand">The Most</span>
           <br />
           Sought-after <span className="text-brand">Products.</span>

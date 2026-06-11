@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoWhite from "@/assets/brand/BigCart Logo - white.png";
+import logoWhite from "@/assets/brand/Logo-white.png";
 import { Instagram, Mail } from "lucide-react";
 import { categories } from "@/data/categories";
 

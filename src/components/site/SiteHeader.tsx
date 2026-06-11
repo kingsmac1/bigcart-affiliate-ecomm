@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/brand/BigCart Logo Store.png";
+import logo from "@/assets/brand/Logo.png";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
