@@ -27,24 +27,31 @@ export const Route = createFileRoute("/categories")({
 
 function CategoriesPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl text-center">
-        <SectionLabel>Categories</SectionLabel>
-        <h1 className="font-display text-5xl leading-tight sm:text-6xl">
-          Pick your <span className="text-brand">corner</span> of the shop.
-        </h1>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-          Every category is hand-curated. Tap one to see what we're loving right
-          now.
-        </p>
+    <>
+      {/* Main content container */}
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <SectionLabel>Categories</SectionLabel>
+          <h1 className="font-display text-5xl leading-tight sm:text-6xl">
+            Pick your <span className="text-brand">corner</span> of the shop.
+          </h1>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
+            Every category is hand-curated. Tap one to see what we're loving right
+            now.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {categories.map((c) => (
+            <CategoryCard key={c.slug} category={c} />
+          ))}
+        </div>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {categories.map((c) => (
-          <CategoryCard key={c.slug} category={c} />
-        ))}
+      {/* Full‑width newsletter with top margin, no bottom margin */}
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mt-16">
+        <Newsletter />
       </div>
-      <Newsletter />
-    </div>
+    </>
   );
 }
