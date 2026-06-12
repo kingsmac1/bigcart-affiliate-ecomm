@@ -9,6 +9,7 @@ import { CategoryCard } from "@/components/site/CategoryCard";
 import { BlogCard } from "@/components/site/BlogCard";
 import { Newsletter } from "@/components/site/Newsletter";
 import { SectionLabel } from "@/components/site/SectionLabel";
+import { Reveal, StaggerGroup, StaggerItem, motion, easeOut } from "@/components/site/Motion";
 import { useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -50,20 +51,53 @@ function Home() {
 }
 
 function Hero() {
+  const line1 = ["Discover", "The", "Most"];
+  const line2 = ["Sought-after", "Products."];
+  const brandSet = new Set(["The", "Most", "Products."]);
   return (
     <section className="mx-auto max-w-7xl px-4 pb-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
-        <SectionLabel>Welcome to BigCart</SectionLabel>
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: easeOut }}
+        >
+          <SectionLabel>Welcome to BigCart</SectionLabel>
+        </motion.div>
         <h1 className="font-display text-5xl sm:text-5xl lg:text-[62px] font-normal leading-[1.05]">
-          Discover <span className="text-brand">The Most</span>
-          <br />
-          Sought-after <span className="text-brand">Products.</span>
+          {[line1, line2].map((line, li) => (
+            <span key={li} className="block overflow-hidden pb-1">
+              {line.map((word, wi) => {
+                const delay = 0.15 + (li * line1.length + wi) * 0.08;
+                const isBrand = brandSet.has(word);
+                return (
+                  <motion.span
+                    key={`${li}-${wi}`}
+                    className={
+                      "inline-block " + (isBrand ? "text-brand" : "")
+                    }
+                    initial={{ y: "110%", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    transition={{ duration: 0.8, ease: easeOut, delay }}
+                  >
+                    {word}
+                    {wi < line.length - 1 && "\u00A0"}
+                  </motion.span>
+                );
+              })}
+            </span>
+          ))}
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
+        <motion.p
+          className="mx-auto mt-5 max-w-xl text-base text-muted-foreground"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: easeOut, delay: 0.55 }}
+        >
           Hand-picked from the global market. Electronics, health, kitchen,
           home, fashion and furniture — quietly chosen for the things that
           actually matter.
-        </p>
+        </motion.p>
       </div>
     </section>
   );
@@ -82,7 +116,7 @@ function PopularProducts() {
 
   return (
     <section className="mx-auto max-w-7xl px-4 pt-16 pb-24 sm:px-6 lg:px-8">
-      <div className="flex flex-wrap justify-center gap-2">
+      <Reveal className="flex flex-wrap justify-center gap-2">
         {filters.map((f) => (
           <button
             key={f.slug}
@@ -97,22 +131,24 @@ function PopularProducts() {
             {f.name}
           </button>
         ))}
-      </div>
+      </Reveal>
 
-      <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <StaggerGroup className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((p) => (
-          <ProductCard key={p.id} product={p} />
+          <StaggerItem key={p.id}>
+            <ProductCard product={p} />
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGroup>
 
-      <div className="mt-10 text-center">
+      <Reveal className="mt-10 text-center">
         <Link
           to="/products"
           className="inline-flex h-11 items-center rounded-full border border-border bg-card px-6 text-sm font-medium hover:bg-muted"
         >
           See all products
         </Link>
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -120,7 +156,7 @@ function PopularProducts() {
 function CategoriesSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl text-center">
+      <Reveal className="mx-auto max-w-3xl text-center">
         <SectionLabel>Shop by Category</SectionLabel>
         <h2 className="font-display text-3xl leading-tight sm:text-5xl">
           Pick your <span className="text-brand">corner</span> of the shop.
@@ -128,12 +164,14 @@ function CategoriesSection() {
         <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
           From everyday essentials to the things you didn't know you needed.
         </p>
-      </div>
-      <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      </Reveal>
+      <StaggerGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((c) => (
-          <CategoryCard key={c.slug} category={c} />
+          <StaggerItem key={c.slug}>
+            <CategoryCard category={c} />
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGroup>
     </section>
   );
 }
@@ -141,21 +179,19 @@ function CategoriesSection() {
 function Testimonials() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl text-center">
+      <Reveal className="mx-auto max-w-3xl text-center">
         <SectionLabel>Testimonials</SectionLabel>
         <h2 className="font-display text-3xl leading-tight sm:text-5xl">
           See what our <span className="text-brand">customers</span> think
           <br className="hidden sm:block" />
           about <span className="text-brand">us</span> and our products.
         </h2>
-      </div>
+      </Reveal>
 
-      <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <StaggerGroup className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((t) => (
-          <figure
-            key={t.name}
-            className="flex flex-col gap-4 rounded-2xl border border-border/70 bg-card p-6"
-          >
+          <StaggerItem key={t.name}>
+          <figure className="flex flex-col gap-4 rounded-2xl border border-border/70 bg-card p-6">
             <div className="flex gap-0.5 text-brand">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-4 w-4 fill-current" />
@@ -177,8 +213,9 @@ function Testimonials() {
               </div>
             </figcaption>
           </figure>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGroup>
     </section>
   );
 }
@@ -187,7 +224,7 @@ function BlogsSection() {
   return (
     <section className="bg-surface-2/60 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
+        <Reveal className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
           <div>
             <SectionLabel>Journal</SectionLabel>
             <h2 className="font-display text-3xl leading-tight sm:text-5xl">
@@ -205,13 +242,15 @@ function BlogsSection() {
             See all posts
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
-        </div>
+        </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <StaggerGroup className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
           {blogs.slice(0, 3).map((b) => (
-            <BlogCard key={b.slug} blog={b} />
+            <StaggerItem key={b.slug}>
+              <BlogCard blog={b} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </section>
   );
