@@ -51,9 +51,6 @@ function Home() {
 }
 
 function Hero() {
-  const line1 = ["Discover", "The", "Most"];
-  const line2 = ["Sought-after", "Products."];
-  const brandSet = new Set(["The", "Most", "Products."]);
   return (
     <section className="mx-auto max-w-7xl px-4 pb-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
@@ -65,28 +62,56 @@ function Hero() {
           <SectionLabel>Welcome to BigCart</SectionLabel>
         </motion.div>
         <h1 className="font-display text-5xl sm:text-5xl lg:text-[62px] font-normal leading-[1.05]">
-          {[line1, line2].map((line, li) => (
-            <span key={li} className="block overflow-hidden pb-1">
-              {line.map((word, wi) => {
-                const delay = 0.15 + (li * line1.length + wi) * 0.08;
-                const isBrand = brandSet.has(word);
-                return (
-                  <motion.span
-                    key={`${li}-${wi}`}
-                    className={
-                      "inline-block " + (isBrand ? "text-brand" : "")
-                    }
-                    initial={{ y: "110%", opacity: 0 }}
-                    animate={{ y: "0%", opacity: 1 }}
-                    transition={{ duration: 0.8, ease: easeOut, delay }}
-                  >
-                    {word}
-                    {wi < line.length - 1 && "\u00A0"}
-                  </motion.span>
-                );
-              })}
-            </span>
-          ))}
+          <span className="block overflow-hidden pb-1 sm:inline-block">
+            <motion.span
+              className="inline-block"
+              initial={{ y: "110%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ duration: 0.8, ease: easeOut, delay: 0.15 }}
+            >
+              Discover
+            </motion.span>
+          </span>
+          <span className="block overflow-hidden pb-1 sm:inline-block">
+            <motion.span
+              className="inline-block text-brand"
+              initial={{ y: "110%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ duration: 0.8, ease: easeOut, delay: 0.23 }}
+            >
+              The
+            </motion.span>
+            &nbsp;
+            <motion.span
+              className="inline-block text-brand"
+              initial={{ y: "110%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ duration: 0.8, ease: easeOut, delay: 0.31 }}
+            >
+              Most
+            </motion.span>
+          </span>
+          <br className="hidden sm:block" />
+          <span className="block overflow-hidden pb-1 sm:inline-block">
+            <motion.span
+              className="inline-block"
+              initial={{ y: "110%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ duration: 0.8, ease: easeOut, delay: 0.39 }}
+            >
+              Sought-after
+            </motion.span>
+          </span>
+          <span className="block overflow-hidden pb-1 sm:inline-block">
+            <motion.span
+              className="inline-block text-brand"
+              initial={{ y: "110%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ duration: 0.8, ease: easeOut, delay: 0.47 }}
+            >
+              Products.
+            </motion.span>
+          </span>
         </h1>
         <motion.p
           className="mx-auto mt-5 max-w-xl text-base text-muted-foreground"
