@@ -12,6 +12,8 @@ collections:
     label: "Products"
     folder: "content/products"
     create: true
+    extension: json
+    format: json
     slug: "{{fields.id}}"
     identifier_field: "id"
     fields:
@@ -41,6 +43,8 @@ collections:
     label: "Categories"
     folder: "content/categories"
     create: true
+    extension: json
+    format: json
     slug: "{{fields.slug}}"
     identifier_field: "slug"
     fields:
@@ -54,6 +58,8 @@ collections:
     label: "Blog Posts"
     folder: "content/blog"
     create: true
+    extension: json
+    format: json
     slug: "{{fields.slug}}"
     identifier_field: "slug"
     fields:
