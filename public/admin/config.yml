@@ -1,0 +1,72 @@
+backend:
+  name: github
+  repo: kingsmac1/bigcart-affiliate-ecomm
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
+    create: true
+    slug: "{{fields.id}}"
+    identifier_field: "id"
+    fields:
+      - { label: "ID (unique, no spaces)", name: "id", widget: "string" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Tagline", name: "tagline", widget: "string" }
+      - { label: "Price From", name: "priceFrom", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "electronics-gadgets"
+          - "health-wellness"
+          - "kitchen-essentials"
+          - "home-living"
+          - "fashion-style"
+          - "furniture-decor"
+      - label: "Badge"
+        name: "badge"
+        widget: "select"
+        required: false
+        options: ["New", "Hot", "Top Pick"]
+      - { label: "Affiliate URL", name: "url", widget: "string" }
+
+  - name: "categories"
+    label: "Categories"
+    folder: "content/categories"
+    create: true
+    slug: "{{fields.slug}}"
+    identifier_field: "slug"
+    fields:
+      - { label: "Slug (unique, no spaces)", name: "slug", widget: "string" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Tagline", name: "tagline", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{fields.slug}}"
+    identifier_field: "slug"
+    fields:
+      - { label: "Slug (unique, no spaces)", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Cover Image", name: "cover", widget: "image" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Read Minutes", name: "readMinutes", widget: "number" }
+      - label: "Body"
+        name: "body"
+        widget: "list"
+        field: { label: "Paragraph", name: "paragraph", widget: "text" }
