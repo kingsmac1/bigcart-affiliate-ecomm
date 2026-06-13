@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { products } from "@/data/products";
-import { categories } from "@/data/categories";
+import { products, categories, blogs } from "@/lib/content";
 import { ProductCard } from "@/components/site/ProductCard";
 import { SectionLabel } from "@/components/site/SectionLabel";
 

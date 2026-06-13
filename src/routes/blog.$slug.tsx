@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getBlog, blogs } from "@/data/blogs";
+import { products, categories, blogs } from "@/lib/content";
 import { BlogCard } from "@/components/site/BlogCard";
 import { Newsletter } from "@/components/site/Newsletter";
 
