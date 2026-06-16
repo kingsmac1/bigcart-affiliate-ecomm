@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/brand/Logo.png";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, Search } from "lucide-react";
+import { useEffect, useState } from "react";
+import { SearchDialog } from "./SearchDialog";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -12,6 +13,19 @@ const NAV = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setSearchOpen((v) => !v);
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-surface/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 sm:py-7 lg:px-8">
@@ -34,6 +48,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden md:block">
+          <button
+            onClick={() => setSearchOpen(true)}
+            aria-label="Search"
+            className="mr-3 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground/70 transition-colors hover:text-foreground"
+          >
+            <Search className="h-4 w-4" />
+          </button>
           <Link
             to="/products"
             className="inline-flex h-10 items-center rounded-full bg-brand px-5 text-sm font-medium text-brand-foreground transition-opacity hover:opacity-90"
@@ -42,13 +63,22 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border md:hidden"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={() => setSearchOpen(true)}
+            aria-label="Search"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border"
+          >
+            <Search className="h-4 w-4" />
+          </button>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -74,6 +104,7 @@ export function SiteHeader() {
           </div>
         </div>
       )}
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
     </header>
   );
 }
