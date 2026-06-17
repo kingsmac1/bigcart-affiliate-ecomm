@@ -1,9 +1,10 @@
 {
-  "id": "leather-backpack",
-  "name": "Everyday Leather Backpack",
-  "tagline": "Full-grain, 18L capacity",
+  "id": "000001I",
+  "name": "Wood polish - Beeswax",
+  "tagline": "Howard Products Beeswax Wood Polish & Conditioner, Feed-N-Wax, Beeswax Furniture Polish For Wood, 16 Oz, Orange",
   "priceFrom": "$149",
-  "image": "/uploads/backpack.jpg",
-  "category": "fashion-style",
+  "image": "/uploads/imgi_14_812Cken1SmL._AC_SX679_.jpg",
+  "category": "home-living",
+  "badge": "New",
   "url": "https://www.amazon.com/dp/PLACEHOLD17?tag=bigcart-20"
 }
