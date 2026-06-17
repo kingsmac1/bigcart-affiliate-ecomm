@@ -1,9 +1,10 @@
 {
-  "id": "air-purifier",
-  "name": "True HEPA Air Purifier",
-  "tagline": "Filters 99.97% of particles",
+  "id": "000001C",
+  "name": "Vacuum Cleaner - Shark",
+  "tagline": "Shark Detect Ultralight Corded Stick Vacuum with Direction Detect and Self-Cleaning Brushroll, Powerful Hair Pickup, Ultra-Lightweight, Crevice & Upholstery Tool Included, Evergreen, HZ752",
   "priceFrom": "$119",
-  "image": "/uploads/purifier.jpg",
-  "category": "health-wellness",
+  "image": "/uploads/imgi_145_51u+1tPFJ+L._AC_SL1500_.jpeg",
+  "category": "home-living",
+  "badge": "New",
   "url": "https://www.amazon.com/dp/PLACEHOLDR9?tag=bigcart-20"
 }
