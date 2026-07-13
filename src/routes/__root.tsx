@@ -65,7 +65,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
-          <a
+          
             href="/"
             className="inline-flex items-center justify-center rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted"
           >
@@ -89,6 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "BigCart curates the most sought-after and genuinely useful products from the global market — electronics, health, kitchen, home, fashion and furniture.",
       },
       { name: "author", content: "BigCart" },
+      { name: "p:domain_verify", content: "5619340a4ed07c212369e716ccd4f946" },
       { property: "og:site_name", content: "BigCart" },
       { property: "og:type", content: "website" },
       {
