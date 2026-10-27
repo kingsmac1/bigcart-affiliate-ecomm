@@ -1,3 +1,4 @@
+import CookieConsent from "@/components/CookieConsent";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -160,7 +161,7 @@ function RootComponent() {
       <div className="flex min-h-screen flex-col bg-surface">
         <SiteHeader />
         <main className="flex-1">
-          <Outlet />
+          <><Outlet /><CookieConsent /></>
         </main>
         <SiteFooter />
       </div>
